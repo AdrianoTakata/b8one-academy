@@ -1,0 +1,35 @@
+.container-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:20px 30px;
+}
+
+.block {
+  width: 300px;
+  height: 300px;
+  background-color: dodgerblue;
+  margin: 10px; 
+}
+
+.block-1 {
+  height:300px;
+}
+
+.block-2 {
+  height: 330px;
+}
+
+.block-3 {
+  height: 400px;
+  align-self: flex-center;
+}
+
+.block-text {
+  font-size: 36px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}

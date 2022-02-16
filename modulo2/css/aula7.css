@@ -1,0 +1,48 @@
+.block-1 {
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 5px;
+  background-color: blueviolet;
+  transition: all .5s ease-in-out;
+}
+
+.block-1:hover {
+  background-color: chartreuse;
+  transform: translateX(20px);
+}
+
+.text-1 {
+  box-sizing: border-box;
+  width: 250px;
+  height: 50px;
+}
+
+.text-1:focus {
+  width: 300px;
+  height: 60px;
+}
+
+.checkbox-1:checked + .label-1{
+  background-color: red;
+}
+
+.list-item:nth-child(2n+1) {
+  background-color: blue;
+}
+
+.list-item:not(:nth-child(3)){
+  background-color: red;
+}
+
+.block-2 {
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 5px;
+  background-color: dodgerblue;
+}
+
+.block-2:empty {
+  display: none;
+}

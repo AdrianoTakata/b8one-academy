@@ -1,0 +1,23 @@
+.block-1 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.text-1 {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.long-text {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: gray;
+  line-height: 28px;
+  max-width: 740px;
+}

@@ -1,0 +1,183 @@
+html {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1010px;
+}
+
+.nav-container {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-sing-up {
+  display: flex;
+  justify-content: center;
+  width: 170px;
+  background-color: #eef4ff;
+  line-height: 60px;
+  border-radius: 20px;
+}
+
+.container-first-section {
+  display: flex;
+  width: 1010px;
+}
+
+.first-section-left-side {
+  width: 55%;
+}
+
+.first-section-right-side {
+  width: 45%;
+}
+
+.first-section-right-side > img {
+  width: 100%;
+}
+
+.fisrt-section-button {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.get-started {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 170px;
+  height: 60px;
+  font-size: 18px;
+  background-color: #3E3FD8;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+
+.get-started > img {
+  width: 23px;
+  height: 23px;
+}
+
+.watch-our-video {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 210px;
+  height: 60px;
+  font-size: 18px;
+}
+
+.watch-our-video > img {
+  width: 48px;
+  height: 48px;
+}
+
+.container-segund-section {
+  width: 1010px;
+}
+
+.logo-business {
+  display: flex;
+  width: 1010px;
+}
+
+.logo-business > img {
+  width: 965px;
+}
+
+.container-third-section {
+  width: 1010px;
+}
+
+.title-third-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-third-section > h2 {
+  width: 418px;
+  height: 138px;
+}
+
+.title-third-section > p {
+  width: 360px;
+  height: 57px;
+  font-size: 18px;
+}
+
+
+
+.card-third-section {
+  width: 360px;
+  height: 360px;
+}
+
+.list-card-third-section {
+  display: flex;
+
+}
+
+.card-third-section > img {
+  width: 100px;
+  height: 100px;
+}

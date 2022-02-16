@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto final - b8one.academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="#" class="logo-link">
+            <img
+              src="assets/images/pokemon-logo.png"
+              alt="input de buscar pokemon"
+              class="logo-image"
+            />
+          </a>
+        </div>
+        <div class="search">
+          <button class="search-button" type="button">
+            <img
+              src="assets/icons/search-icon.png"
+              alt="logo do site pokemon"
+              class="search-button-icon"
+            />
+          </button>
+          <input
+            class="search-input"
+            type="search"
+            placeholder="Buscar seu pokémon"
+          />
+        </div>
+      </div>
+    </header>
+    <section class="pokemon-filter-section">
+      <div class="container">
+        <h2 class="pokemon-filter-section-title">Pokemons</h2>
+        <ul class="pokemon-filter-list">
+          <li class="pokemon-filter-item pokemon-filter-item-active">
+            <button class="pokemon-filter-button" data-pokemon-type-name="all">
+              All
+            </button>
+          </li>
+          <li class="pokemon-filter-item">
+            <button class="pokemon-filter-button" data-pokemon-type-name="fire">
+              Fire
+            </button>
+          </li>
+          <li class="pokemon-filter-item">
+            <button
+              class="pokemon-filter-button"
+              data-pokemon-type-name="water"
+            >
+              Water
+            </button>
+          </li>
+          <li class="pokemon-filter-item">
+            <button
+              class="pokemon-filter-button"
+              data-pokemon-type-name="eletric"
+            >
+              Eletric
+            </button>
+          </li>
+          <li class="pokemon-filter-item" data-pokemon-type-name="poison">
+            <button class="pokemon-filter-button">Poison</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <main class="pokemon-main">
+      <div class="container">
+        <ul class="pokemons-list">
+          <!-- <li class="pokemons-item"> -->
+            <!-- <div class="pokemons-card" data-pokemon-type-name="">
+              <div class="pokemons-card-image-container">
+                <img
+                  src="assets/images/pokemon-image.png"
+                  alt=""
+                  class="pokemons-card-image"
+                />
+              </div>
+              <div class="pokemons-card-info">
+                <h3 class="pokemons-card-name">Pikachu</h3>
+                <span class="pokemons-card-type"> Water </span>
+              </div>
+              <ul class="pokemons-card-attributes">
+                <li class="pokemons-card-attributes-item">
+                  <span class="pokemons-card-attributes-name"> HP </span>
+                  <div class="pokemons-card-attributes-progress">
+                    <div class="pokemons-card-attributes-progress-bar"></div>
+                  </div>
+                  <span class="pokemons-card-attributes-name"> Attack </span>
+                  <div class="pokemons-card-attributes-progress">
+                    <div class="pokemons-card-attributes-progress-bar"></div>
+                  </div>
+                  <span class="pokemons-card-attributes-name"> Defense </span>
+                  <div class="pokemons-card-attributes-progress">
+                    <div class="pokemons-card-attributes-progress-bar"></div>
+                  </div>
+                  <span class="pokemons-card-attributes-name">
+                    Attack Special
+                  </span>
+                  <div class="pokemons-card-attributes-progress">
+                    <div class="pokemons-card-attributes-progress-bar"></div>
+                  </div>
+                </li>
+              </ul> 
+            </div> -->
+          <!-- </li> -->
+        </ul>
+      </div>
+    </main>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>

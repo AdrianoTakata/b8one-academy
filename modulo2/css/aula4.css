@@ -1,0 +1,38 @@
+.block {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background: black;
+}
+
+.block-1 {
+  /* position: relative; */
+  top: 20px;
+  left: 3px;
+}
+
+.container {
+  position: relative;
+}
+
+.block-2 {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+}
+
+.block-3 {
+  background-color: red;
+}
+
+.block-4 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: yellow;
+}
+
+.block-5 {
+  background-color: brown;
+}

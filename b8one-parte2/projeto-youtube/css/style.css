@@ -1,0 +1,277 @@
+/* Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 8px 32px 8px 16px;
+}
+
+.header__block--right {
+  display: flex;
+  align-items: center;
+}
+
+/* Humburger  */
+
+.hamburger {
+  margin-right: 16px;
+}
+
+.hamburger__action {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 6px 4px;
+}
+
+.hamburger__item {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #000000;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.hamburger__item::before,
+.hamburger__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  width: calc(100% - 8px);
+  height: 1px;
+  background-color: #000000;
+}
+
+.hamburger__item::before {
+  top: 6px;
+}
+
+.hamburger__item::after {
+  bottom: 6px;
+}
+
+/* Search  */
+
+.search {
+  max-width: 574px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search__form {
+  display: flex;
+  align-items: center;
+  flex: 1 1 100%;
+}
+
+.search__input {
+  width: calc(100% - 94px);
+  height: 32px;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-right: 0;
+  border-radius: 1px 0px 0px 1px;
+  padding-left: 12px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #888888;
+}
+
+.search__button--search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 16px;
+  background: #f8f8f8;
+  border: 1px solid #cccccc;
+  border-radius: 0px 1px 1px 0px;
+  max-width: 52px;
+  width: 100%;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.search__button--voice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 32px;
+  width: 100%;
+  height: 32px;
+  background: #f9f9f9;
+  border-radius: 20px;
+}
+
+/* Menu action  */
+
+.menu-user-action {
+  margin-right: 24px;
+}
+
+.menu-user-action__list {
+  display: flex;
+  align-items: center;
+}
+
+.menu-user-action__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.menu-user-link,
+.menu-user-profile {
+  display: block;
+  line-height: 0;
+}
+
+/* Side Bar  */
+
+.sidebar {
+  max-width: 196px;
+  width: 100%;
+  height: calc(100vh - 48px);
+  overflow-y: scroll;
+  padding-top: 12px;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #909090;
+  border-radius: 20px;
+}
+
+/* Menu Group  */
+
+.menu-group__title {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #636363;
+  padding-left: 12px;
+  margin: 0 0 8px;
+}
+
+.menu-group:not(:last-child) {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.menu-group__link {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+}
+
+.menu-group__link--active {
+  background-color: #d9d9d9;
+}
+
+.menu-group__icon {
+  margin-right: 16px;
+}
+
+.menu-group__text {
+  display: block;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+}
+
+.menu-group__link--active .menu-group__text {
+  font-weight: 500;
+}
+
+.menu-group__alert {
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #065fd4;
+  border-radius: 100px;
+  margin-left: auto;
+}
+
+main {
+  display: flex;
+}
+
+.categories-container {
+  height: 50px;
+  padding: 12px 20px;
+}
+
+.categories-container__list {
+  display: flex;
+  align-items: center;
+}
+
+.categories-container-link {
+  padding: 4px 12px;
+  background: #f2f2f2;
+  border: 0.5px solid #d9d9d9;
+  border-radius: 16px;
+  margin-right: 10px;
+  font-size: 12px;
+  height: 26px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+.youtube-premium-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  height: 252px;
+  background-image: url(../assets/image/background-youtube-premium.png);
+  padding-top: 40px;
+  padding-right: 45px;
+  padding-left: 20px;
+}
+
+.youtube-premium-container-inside-left {
+  max-width: 330px;
+  width: 100%;
+}
+
+.logo-youtube-premium {
+  margin-bottom: 16px;
+}
+
+.text-youtube-premium-publicity {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  margin-bottom: 16px;
+}
+
+.first-month-free {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 133px;
+  height: 34px;
+  border: 1.5px solid #065fd4;
+  box-sizing: border-box;
+  border-radius: 2px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  color: #065FD4;
+  text-transform: uppercase;
+}
+
+.close-youtube-premium-publicty {
+  font-weight: 300;
+}

@@ -1,0 +1,44 @@
+.title-1 {
+  position: relative;
+  text-align: center;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.title-1:after,
+.title-1:before {
+  content: ""; /* sempre tem que ter */
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 2px;
+  background: red;
+}
+
+.title-1:before {
+  left: 30%;
+}
+
+.title-1:after {
+  right: 30%;
+}
+
+.subtitle {
+  text-align: center;
+  color: blue;
+}
+
+.subtitle:before {
+  content: "Texto antes do";
+  color: red;
+}
+
+.long-text::first-letter {
+  font-size: 34px;
+}
+
+.input-1::placeholder {
+  color: red
+}
