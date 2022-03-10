@@ -1,35 +1,48 @@
 import fetchJson from "./fetchJson.js"
 import changeActiveButton from "./showInfoDate.js";
+import renderGraphic from "./graphicChart.js";
+import createDataMockSellers from "./dataGraphicSellers.js";
+import createDataMockDemand from "./dataGraphicDemand.js";
+import createDataMockResellers from "./dataGraphicResellers.js";
+import manipulateData from "./manipulateData.js";
+import loginOut from "./loginOut.js";
 
 async function main() {
 
   const dataHeader = await fetchJson("https://test-final.b8one.academy/user");
-  console.log({ dataHeader });
   renderHeaderInfo(dataHeader);
 
   const dataMenu = await fetchJson("https://test-final.b8one.academy/menu");
-  console.log({ dataMenu });
   renderItemMenu(dataMenu.menuTree);
 
   const dataProduct = await fetchJson("https://test-final.b8one.academy/products/more-sold");
-  console.log({ dataProduct });
   renderSellProduct(dataProduct.products)
 
   const dataResellersRanking = await fetchJson("https://test-final.b8one.academy/resellers/ranking");
-  console.log({ dataResellersRanking });
   renderResellerRanking(dataResellersRanking.resellers);
 
   const dataSales = await fetchJson("https://test-final.b8one.academy/sales");
-  console.log({ dataSales });
-  showValuesSales(dataSales)
+  showValuesSales(dataSales);
 
+  const dataSellers = createDataMockSellers(31);
+  const dataDemand = createDataMockDemand(31);
+  const dataResellers = createDataMockResellers(31);
+
+  const newDataSellers = manipulateData(dataSellers, 7);
+  
   const dateName = "date__item--button";
-  changeActiveButton(dateName);
-
   const generalReport = "general-report__item--button";
-  changeActiveButton(generalReport);
+
+  changeActiveButton(dateName, generalReport, dataSellers, dataDemand, dataResellers);
+  changeActiveButton(generalReport, dateName, dataSellers, dataDemand, dataResellers);
+
+  renderGraphic(newDataSellers);
+
+  loginOut();
 
 }
+
+
 
 function renderItemMenu(data) {
 
@@ -41,22 +54,22 @@ function renderItemMenu(data) {
     element.append(spanContainer);
 
     if (data[index].hasChildren) {
-      const sidebarMenuItemIconContainer = sidebarMenuItemIcon();
+      const sidebarMenuItemIconContainer = sidebarMenuItemIcon(element.dataset.sideBarItem);
       element.insertAdjacentHTML("beforeend", sidebarMenuItemIconContainer);
     }
 
   })
 }
 
-function sidebarMenuItemIcon() {
+function sidebarMenuItemIcon(label) {
   return `
     <div class="sidebar-menu__item--label">
-      <svg class="tools__button-show item__button-show" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      <svg class="${label}__button-show item__button-show" width="24" height="24" viewBox="0 0 24 24" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path d="M7.50024 9.74963L12.0002 14.2496L16.5002 9.74963" stroke="#333333" stroke-width="1.5"
         stroke-linecap="round" stroke-linejoin="round" />
       </svg>
-      <svg class="tools__button-unshow item__button-show" width="24" height="24" viewBox="0 0 24 24"
+      <svg class="${label}__button-unshow item__button-show" width="24" height="24" viewBox="0 0 24 24"
         fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M16.4998 14.2493L11.9998 9.74933L7.49976 14.2493" stroke="#333333" stroke-width="1.5"
         stroke-linecap="round" stroke-linejoin="round" />
@@ -159,15 +172,19 @@ function createdSvgIcon(typeIcon, colorIcon) {
     `
 }
 
-
 function renderHeaderInfo(data) {
 
   const headerInfoBusiness = document.querySelector(".header__info-business");
 
+  const headerLink = document.createElement("a");
+  headerLink.classList.add("header__link")
+  headerLink.href = "#";
+  headerLink.innerText = formatPerfilIcon(data.organization);
+
   const spanNameBusiness = document.createElement("span");
   spanNameBusiness.classList.add("header__name--business");
   spanNameBusiness.textContent = data.organization;
-  headerInfoBusiness.appendChild(spanNameBusiness)
+  headerInfoBusiness.append(headerLink, spanNameBusiness)
 
   const headerNavPerfil = document.querySelector(".header-nav__perfil");
 

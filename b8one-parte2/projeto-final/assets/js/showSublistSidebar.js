@@ -1,11 +1,10 @@
 function clickButton(dataName){
-  console.log(dataName)
+
   const nameLabel = dataName.dataset.sideBarItem;
   const subList = document.querySelector(`.sidebar-menu__sublist--${nameLabel}`);
   const showIcon = document.querySelector(`.${nameLabel}__button-show`);
   const unShowIcon = document.querySelector(`.${nameLabel}__button-unshow`);
   const onOff = subList.classList.toggle("on-off");
-
 
   if (onOff){
     subList.style.display = "block";

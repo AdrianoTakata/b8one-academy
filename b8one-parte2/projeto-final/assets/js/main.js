@@ -2,6 +2,7 @@ import requestServe from "./requestServe.js";
 import checkedEmail from "./checkEmail.js";
 import checkedEmailLogin from "./checkEmailLogin.js";
 import showPassword from "./showPassword.js";
+import checkToken from "./checkToken.js"
 
 async function loginIn(){
 
@@ -17,7 +18,7 @@ async function loginIn(){
   const isCheck = mantainConected.checked;
 
   if (response) {
-    document.location.href = "/index2.html";
+    document.location.href = "/main.html";
     if (isCheck) {
       localStorage.setItem('token', JSON.stringify(user));
     }
@@ -25,15 +26,6 @@ async function loginIn(){
     checkedEmailLogin();
   }
 }
-
-function checkToken(){
-  const token = localStorage.getItem('token');
-  console.log(token);
-  if(!token){
-    document.location.href = "/index2.html";
-  }
-}
-
 
 function main() {
 
@@ -49,4 +41,4 @@ function main() {
 
 }
 
-main()
+main();

@@ -180,7 +180,34 @@
   border-radius: 8px;
 }
 
-/* Html 2 */
+/* ForgetPassword.html */
+
+.forgot--password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 32px;
+  gap: 24px 0;
+  text-align: center;
+  background-color: var(--background-color-screen);
+}
+
+.forgot--password-text {
+  font-size: 48px;
+  color: var(--color-login-content-white);
+}
+
+.forgot--password-link {
+  padding: 16px 20px;
+  border: 2px solid var(--color-login-content-white);
+  color: var(--color-login-content-white);
+  border-radius: 8px;
+}
+
+/* main.html */
 
 .header {
   display: flex;
@@ -190,16 +217,6 @@
   padding: 16px 32px 16px 20px;
   height: 64px;
 }
-/* 
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  width: min(100%, 1440px);
-  height: 100%;
-  padding: 16px 32px 16px 20px;
-} */
 
 .header__info-business {
   display: flex;
@@ -208,9 +225,19 @@
   height: 32px;
 }
 
-.header__image--business {
+.header__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 32px;
   height: 32px;
+  background: #f1f2f9;
+  border-radius: 100%;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.005em;
+  color: #425dc7;
 }
 
 .header__name--business {
@@ -232,10 +259,6 @@
 }
 
 /* Help icon */
-
-.help-container__icon {
-  display: none;
-}
 
 .quadrado {
   display: block;
@@ -296,15 +319,7 @@
   padding: 12px 0px;
 }
 
-.header-nav__icon--help:hover .help-container__icon {
-  display: block;
-}
-
 /* Notification */
-
-.notification-container__icon {
-  display: none;
-}
 
 .notification-container__icon--info {
   width: 340px;
@@ -460,10 +475,6 @@
   padding: 12px 24px;
 }
 
-.header-nav__icon--notification:hover .notification-container__icon {
-  display: block;
-}
-
 /* Profile  */
 
 .header-nav__icon--notification-number {
@@ -489,11 +500,6 @@
   line-height: 20px;
   color: #ffffff;
   margin-left: 12px;
-}
-
-.perfil-container__icon {
-  display: none;
-  /* display: block; */
 }
 
 .quadrado2 {
@@ -544,8 +550,27 @@
   color: #333333;
 }
 
-.header-nav__perfil:hover .perfil-container__icon {
-  display: block;
+.loginOut {
+  width: 100%;
+  text-align: left;
+}
+
+/* Hover Help - Notification - Profile */
+
+.help-container__icon,
+.notification-container__icon,
+.perfil-container__icon {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s ease-in-out;
+}
+
+.header-nav__icon--notification:hover .notification-container__icon,
+.header-nav__perfil:hover .perfil-container__icon,
+.header-nav__icon--help:hover .help-container__icon {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s, opacity 0.5s;
 }
 
 /* Side bar */
@@ -630,8 +655,8 @@
   color: #425dc7;
 }
 
-.sidebar-menu__link:hover .sidebar-menu__item--icon path,
-.sidebar-menu__button:hover .sidebar-menu__item--icon path {
+.sidebar-menu__link:hover .sidebar-menu__item--label .item__button-show path,
+.sidebar-menu__button:hover .sidebar-menu__item--label .item__button-show path {
   stroke: #425dc7;
 }
 
@@ -867,24 +892,17 @@
   color: var(--color-login-content-white);
 }
 
-.date__item--button:hover
-.date__item--icon
-path {
+.date__item--button:hover .date__item--icon path {
   stroke: var(--color-login-content-blue);
 }
 
-.date__item--button-active
-.date__item--icon 
-path {
+.date__item--button-active .date__item--icon path {
   stroke: var(--color-login-content-white);
 }
 
-.date__item--button-active:hover
-.date__item--icon
-path {
+.date__item--button-active:hover .date__item--icon path {
   stroke: var(--color-login-content-white);
-} 
-
+}
 
 .date__item--button-calendar {
   display: flex;
@@ -1025,17 +1043,14 @@ path {
   color: var(--color-login-content-stronger-gray);
 }
 
-
 .general-report__graphic {
-  display: flex;
-  align-items: stretch;
-  width: 100% !important;
-  height: 228px !important;
+  width: 100%;
+  height: 228px;
 }
 
 .general-report__graphic--image {
   width: 100% !important;
-  max-height: 100% !important;
+  height: 100% !important;
 }
 
 .general-report--right-side {
@@ -1234,7 +1249,6 @@ path {
 }
 
 .general-report__ranking--button:hover {
-
   background-color: var(--color-login-content-blue);
   color: var(--color-login-content-white);
 }
@@ -1563,6 +1577,26 @@ path {
     justify-content: space-between;
     align-items: center;
   }
+
+  /* Forgot Password  */
+
+  .forgot--password-container {
+    gap: 16px 0;
+    padding: 0 16px;
+    background-color: var(--background-color-screen);
+  
+  }
+  
+  .forgot--password-text {
+    font-size: 24px;
+    color: var(--color-login-content-white);
+    text-align: center;
+  }
+  
+  .forgot--password-link {
+    width: 100%;
+  }
+
 
   /* html 2 */
 

@@ -19,20 +19,6 @@
       <span class="hamburger__item"></span>
     </button>
     <div class="header__info-business">
-      <a href="#" class="header__link">
-        <div class="header__image--business">
-          <svg class="header__logo" width="32" height="32" viewBox="0 0 32 32" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="16" fill="#F1F2F9" />
-            <path
-              d="M6.44356 10.8182H8.70066L11.7234 18.196H11.8427L14.8654 10.8182H17.1225V21H15.3526V14.005H15.2582L12.4443 20.9702H11.1218L8.3079 13.9901H8.21344V21H6.44356V10.8182ZM19.0611 21V10.8182H25.6832V12.3643H20.9055V15.1286H25.3402V16.6747H20.9055V19.4538H25.723V21H19.0611Z"
-              fill="#425DC7" />
-          </svg>
-        </div>
-      </a>
-      <!-- <span class="header__name--business">
-        Minha Empresa
-      </span> -->
     </div>
     <nav class="header-nav">
       <div class="header-nav__icon header-nav__icon-aux header-nav__icon--help" data-header="help">
@@ -166,7 +152,9 @@
                   Minha Conta
                 </li>
                 <li class="perfil-container__item">
-                  Sair
+                  <button class="loginOut">
+                    Sair
+                  </button>
                 </li>
               </ul>
             </nav>
@@ -363,7 +351,7 @@
             </ul>
           </li>
           <li class="sidebar-menu__item">
-            <button href="" class="sidebar-menu__button" data-side-bar-item="tools">
+            <button class="sidebar-menu__button" data-side-bar-item="tools">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.5 3.74915H3.75V10.4991H10.5V3.74915Z" fill="#425DC7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M20.25 13.4991H13.5V20.2491H20.25V13.4991Z" fill="#425DC7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -713,8 +701,6 @@
     </main>
   </div>
   <script src="./assets/js/showSublistSidebar.js"></script>
-  <script src="./assets/js/showIhoverHeader.js"></script>
-  <!-- <script src="./assets/js/showInfoDate.js"></script> -->
   <script src="./assets/js/main2.js" type="module"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./assets/js/graphicChart.js"></script>

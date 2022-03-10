@@ -1,37 +1,73 @@
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-        scales: {
-            y: {
-                beginAtZero: true
+function renderGraphic(data) {
+
+    const dataSets = data.reduce( (acc, element) => {
+        const dataInfo = {
+            label: element.name,
+            data: element.values,
+            borderColor: element.color,
+            backgroundColor: element.color,
+        }
+        acc = [...acc, dataInfo];
+        return acc
+    }, [])
+
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data[0].date,
+            datasets: dataSets
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            elements: {
+                line: {
+                    borderWidth:2
+                },
+                point:{
+                    radius: 0
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 200,
+                    ticks: {
+                        stepSize: 50,
+                        align: 'end',
+                    },
+                    grid: {
+                        drawBorder: false
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        align: 'end',
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                    align: 'start',
+                    labels: {
+                        boxWidth: 6,
+                        pointStyle: 'circle',
+                        usePointStyle: true,
+                    },
+                    title: {
+                        padding: 4,
+                    }
+                }
             }
         }
-    }
-});
+    });
+}
+
+export default renderGraphic;
