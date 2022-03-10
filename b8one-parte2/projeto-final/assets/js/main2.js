@@ -6,6 +6,7 @@ import createDataMockDemand from "./dataGraphicDemand.js";
 import createDataMockResellers from "./dataGraphicResellers.js";
 import manipulateData from "./manipulateData.js";
 import loginOut from "./loginOut.js";
+import showList from "./showSublistSidebar.js"
 
 async function main() {
 
@@ -23,6 +24,8 @@ async function main() {
 
   const dataSales = await fetchJson("https://test-final.b8one.academy/sales");
   showValuesSales(dataSales);
+
+  showList();
 
   const dataSellers = createDataMockSellers(31);
   const dataDemand = createDataMockDemand(31);
