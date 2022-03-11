@@ -975,14 +975,18 @@
   color: var(--color-login-content-gray);
 }
 
+.general-report__item--button:hover {
+  border-bottom: 2px solid var(--color-login-content-black);
+}
+
 .general-report__item--button-active {
   color: var(--color-login-content-blue);
   border-bottom: 2px solid var(--color-login-content-blue);
 }
 
-.general-report__item--button:hover {
-  transition: all 0.5s ease-in-out;
-  border-bottom: 2px solid var(--color-login-content-black);
+.general-report__item--button-active:hover {
+  color: var(--color-login-content-blue);
+  border-bottom: 2px solid var(--color-login-content-blue);
 }
 
 .general-report__list--data-money {
