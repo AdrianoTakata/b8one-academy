@@ -19,37 +19,79 @@ function renderDataReport(dataLabel1, dataLabel2, sellers, demand, resellers) {
   const graphicContainer = document.querySelector(".general-report__graphic");
 
   const canvasContainer = document.querySelector(".general-report__graphic--image");
-  switch (dataLabel1) {
-    case 'sell':
-      generalReportContainer.style.display = "block";
-      reportListDataMoney.style.display = "flex";
-      reportSelectContainer.style.display = "none";
-      generalReportMenu.style.marginBottom = "48px";
-      rightSide.style.display = "none";
-      graphicContainer.style.height = "228px";
-      graphicContainer.removeChild(canvasContainer);
-      createdCanvas(dataSellers)
-      break
-    case 'demand':
-      generalReportContainer.style.display = "block";
-      reportListDataMoney.style.display = "none";
-      reportSelectContainer.style.display = "none";
-      generalReportMenu.style.marginBottom = "48px";
-      rightSide.style.display = "none";
-      graphicContainer.style.height = "322px";
-      graphicContainer.removeChild(canvasContainer);
-      createdCanvas(dataDemand)
-      break
-    case 'resellers':
-      generalReportContainer.style.display = "flex";
-      reportListDataMoney.style.display = "none";
-      reportSelectContainer.style.display = "block";
-      generalReportMenu.style.marginBottom = "24px";
-      rightSide.style.display = "block";
-      graphicContainer.style.height = "290px";
-      graphicContainer.removeChild(canvasContainer);
-      createdCanvas(dataResellers)
-      break
+
+  const heightContainer = generalReportContainer.offsetHeight;
+  console.log(heightContainer);
+
+  if (heightContainer == 502) {
+    switch (dataLabel1) {
+      case 'sell':
+        generalReportContainer.style.display = "block";
+        reportListDataMoney.style.display = "flex";
+        reportSelectContainer.style.display = "none";
+        generalReportMenu.style.marginBottom = "48px";
+        rightSide.style.display = "none";
+        graphicContainer.style.height = "228px";
+        graphicContainer.removeChild(canvasContainer);
+        createdCanvas(dataSellers)
+        break
+      case 'demand':
+        generalReportContainer.style.display = "block";
+        reportListDataMoney.style.display = "none";
+        reportSelectContainer.style.display = "none";
+        generalReportMenu.style.marginBottom = "48px";
+        rightSide.style.display = "none";
+        graphicContainer.style.height = "322px";
+        graphicContainer.removeChild(canvasContainer);
+        createdCanvas(dataDemand)
+        break
+      case 'resellers':
+        generalReportContainer.style.display = "flex";
+        reportListDataMoney.style.display = "none";
+        reportSelectContainer.style.display = "block";
+        generalReportMenu.style.marginBottom = "24px";
+        rightSide.style.display = "block";
+        graphicContainer.style.height = "290px";
+        graphicContainer.removeChild(canvasContainer);
+        createdCanvas(dataResellers)
+        break
+    }
+  } else {
+    switch (dataLabel1) {
+      case 'sell':
+        generalReportContainer.style.display = "block";
+        generalReportContainer.style.height = "416px";
+        reportListDataMoney.style.display = "flex";
+        reportSelectContainer.style.display = "none";
+        generalReportMenu.style.marginBottom = "24px";
+        rightSide.style.display = "none";
+        graphicContainer.style.height = "204px";
+        graphicContainer.removeChild(canvasContainer);
+        createdCanvas(dataSellers)
+        break
+      case 'demand':
+        generalReportContainer.style.display = "block";
+        generalReportContainer.style.height = "352px";
+        reportListDataMoney.style.display = "none";
+        reportSelectContainer.style.display = "none";
+        generalReportMenu.style.marginBottom = "24px";
+        rightSide.style.display = "none";
+        graphicContainer.style.height = "220px";
+        graphicContainer.removeChild(canvasContainer);
+        createdCanvas(dataDemand)
+        break
+      case 'resellers':
+        generalReportContainer.style.display = "block";
+        generalReportContainer.style.height = "780px";
+        reportListDataMoney.style.display = "none";
+        reportSelectContainer.style.display = "none";
+        generalReportMenu.style.marginBottom = "24px";
+        rightSide.style.display = "block";
+        graphicContainer.style.height = "228px";
+        graphicContainer.removeChild(canvasContainer);
+        createdCanvas(dataResellers)
+        break
+    }
   }
 
 }

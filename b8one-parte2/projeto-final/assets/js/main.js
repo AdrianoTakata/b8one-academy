@@ -18,7 +18,7 @@ async function loginIn(){
   const isCheck = mantainConected.checked;
 
   if (response) {
-    document.location.href = "/main.html";
+    document.location.href = "/dashboard.html";
     if (isCheck) {
       localStorage.setItem('token', JSON.stringify(user));
     }

@@ -1,7 +1,7 @@
 function checkToken(){
   const token = localStorage.getItem('token');
   if(token){
-    document.location.href = "/main.html";
+    document.location.href = "/dashboard.html";
   } 
 }
 
