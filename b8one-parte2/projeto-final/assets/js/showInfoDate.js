@@ -1,11 +1,9 @@
 import renderGraphic from './graphicChart.js';
-import manipulateData from './manipulateData.js';
+import { manipulateData } from './utilsDate.js';
 
 function renderDataReport(dataLabel1, dataLabel2, sellers, demand, resellers) {
 
   const numberDate = convertNumber(dataLabel2);
-  console.log(numberDate)
-  console.log(dataLabel1)
 
   const dataSellers = manipulateData(sellers, numberDate);
   const dataDemand = manipulateData(demand, numberDate);
@@ -21,9 +19,8 @@ function renderDataReport(dataLabel1, dataLabel2, sellers, demand, resellers) {
   const canvasContainer = document.querySelector(".general-report__graphic--image");
 
   const heightContainer = generalReportContainer.offsetHeight;
-  console.log(heightContainer);
 
-  if (heightContainer == 502) {
+  if (heightContainer >= 500 && heightContainer <= 504) {
     switch (dataLabel1) {
       case 'sell':
         generalReportContainer.style.display = "block";
@@ -57,6 +54,7 @@ function renderDataReport(dataLabel1, dataLabel2, sellers, demand, resellers) {
         break
     }
   } else {
+    console.log("mobile")
     switch (dataLabel1) {
       case 'sell':
         generalReportContainer.style.display = "block";

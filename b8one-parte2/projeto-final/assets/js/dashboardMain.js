@@ -1,12 +1,15 @@
 import fetchJson from "./fetchJson.js"
 import changeActiveButton from "./showInfoDate.js";
 import renderGraphic from "./graphicChart.js";
-import createDataMockSellers from "./dataGraphicSellers.js";
-import createDataMockDemand from "./dataGraphicDemand.js";
-import createDataMockResellers from "./dataGraphicResellers.js";
-import manipulateData from "./manipulateData.js";
+import { manipulateData } from "./utilsDate.js";
 import loginOut from "./loginOut.js";
 import showList from "./showSublistSidebar.js";
+import changePagination from "./changePagination.js";
+import changePaginationArrowButton from "./changePaginationArrowButton.js";
+
+import createDataMockSellers from "./dataGraphicMock/dataGraphicSellers.js";
+import createDataMockDemand from "./dataGraphicMock/dataGraphicDemand.js";
+import createDataMockResellers from "./dataGraphicMock/dataGraphicResellers.js";
 
 import renderHeaderInfo from "./renderCompoents/renderHeaderInfo.js";
 import renderItemMenu from "./renderCompoents/renderItemMenu.js";
@@ -50,6 +53,9 @@ async function main() {
   loginOut();
 
   hamburgerButton();
+
+  changePagination();
+  changePaginationArrowButton();
 
 }
 

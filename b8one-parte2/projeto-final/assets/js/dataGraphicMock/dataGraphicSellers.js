@@ -1,5 +1,4 @@
-import generateDate from "./generateDate.js";
-import generateValue from "./generateValue.js";
+import { generateDate, generateValue } from "../utilsDate.js";
 
 function createDataMockSellers(amountNmber) {
   const dataMockSellers = [

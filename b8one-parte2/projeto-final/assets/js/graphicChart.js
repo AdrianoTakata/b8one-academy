@@ -1,6 +1,12 @@
 function renderGraphic(data) {
 
-    const dataSets = data.reduce( (acc, element) => {
+    const dataSets = createDataSet(data);
+    createGraphic(dataSets, data[0].date)
+
+}
+
+function createDataSet(dataset) {
+    const datasetStruct = dataset.reduce( (acc, element) => {
         const dataInfo = {
             label: element.name,
             data: element.values,
@@ -11,12 +17,32 @@ function renderGraphic(data) {
         return acc
     }, [])
 
+    return datasetStruct;
+}
+
+function createGraphic(data, dataLabel) {
+
+    const generalReportContainer = document.querySelector(".general-report");
+    const heightContainer = generalReportContainer.offsetHeight;
+    const numberDate = data[0].data.length
+    let arrayLabel = [];
+    if (numberDate > 30){
+        arrayLabel = ["Jan", "Fev", "Mar", "Abr", "May", "Jun", "Jul", "Aug", "Sep", "Out", "Nov", "Dez"]
+    } else {
+        console.log(heightContainer)
+        arrayLabel = dataLabel.map( (element) => {
+            const label = (heightContainer >= 501 && heightContainer <= 503) ? element : element.slice(0, 5);
+            return label
+        })
+    }
+    
+
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: data[0].date,
-            datasets: dataSets
+            labels: arrayLabel,
+            datasets: data
         },
         options: {
             responsive: true,

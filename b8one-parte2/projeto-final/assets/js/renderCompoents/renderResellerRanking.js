@@ -2,7 +2,6 @@ import { formatPerfilIcon, formatPercentege, } from "../utils.js";
 
 function renderResellerRanking(data) {
 
-  console.log(data)
   const rankingList = document.querySelector(".general-report__ranking--list");
   data.forEach((element, index) => {
     const rankingItem = document.createElement("li");

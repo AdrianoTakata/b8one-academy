@@ -624,15 +624,6 @@
   color: #425dc7;
 }
 
-.sidebar-menu__link {
-  display: flex;
-  align-items: center;
-  height: 48px;
-  padding: 12px 8px;
-  color: var(--color-login-content-stronger-gray);
-  gap: 0 16px;
-}
-
 .sidebar-menu__button {
   display: flex;
   align-items: center;
@@ -642,7 +633,11 @@
   gap: 0 16px;
 }
 
-.sidebar-menu__link:hover,
+.sidebar-menu__item--label{
+  width: 24px;
+  height: 24px;
+}
+
 .sidebar-menu__button:hover {
   border-radius: 8px;
   background-color: #e5e5e5;
@@ -655,7 +650,7 @@
   stroke: #425dc7;
 }
 
-.sidebar-menu__link--active {
+.sidebar-menu__button-active {
   color: var(--color-login-content-blue);
 }
 
@@ -1104,7 +1099,7 @@
   display: flex;
   align-items: center;
   gap: 0 16px;
-  height: 48px;
+  padding: 4px 0px;
 }
 
 .general-report__ranking--number {
@@ -1148,9 +1143,15 @@
   display: none;
   position: relative;
   width: 280px;
-  height: 40px;
+  /* height: 40px; */
   margin-top: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
   background-color: transparent;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.005em;
+  border: 1px solid #999999;
 }
 
 .general-report__select--resellers {
@@ -1165,6 +1166,7 @@
   letter-spacing: -0.005em;
   -webkit-appearance: none;
   appearance: none;
+  color: #333333;
 }
 
 .general-report__select--resellers-icon {
@@ -1176,10 +1178,10 @@
 }
 
 .general-report__select--text-light {
-  color: red;
+  color: #999999;
 }
 
-.general-report__select--resellers:hover {
+.general-report__select--resellers-container:hover {
   border: 2px solid #425dc7;
   padding: 7.5px 15.5px;
 }
@@ -1316,6 +1318,10 @@
   font-size: 12px;
   line-height: 16px;
   color: #555555;
+}
+
+.insights-table__item--first {
+  border-bottom: 1px solid #EEEEEE;
 }
 
 .insights-table__item-product {
@@ -1520,7 +1526,7 @@
   color: white;
 }
 
-.insights-pagination__right-side--button {
+.insights-pagination__arrow--button {
   width: 24px;
   height: 24px;
   color: var(--color-login-content-blue);
@@ -1528,12 +1534,12 @@
   border-radius: 120px;
 }
 
-.insights-pagination__right-side--button:hover {
+.insights-pagination__arrow--button:hover {
   background: #425dc7;
 }
 
-.insights-pagination__right-side--button:hover
-  .insights-pagination__right-side--button-icon
+.insights-pagination__arrow--button:hover
+  .insights-pagination__arrow--button-icon
   path {
   background: #425dc7;
   stroke: white;
@@ -1775,6 +1781,10 @@
 
   /*  General Report */
 
+  .review-data {
+    margin-bottom: 16px;
+  }
+
   .general-report {
     display: block;
     padding: 16px;
@@ -1813,6 +1823,14 @@
     border-radius: 12px;
     padding: 6px;
     white-space: nowrap;
+  }
+
+  .general-report__item--button:hover {
+    border-bottom: 2px solid var(--color-login-content-blue);
+  }
+
+  .general-report__item--button-active {
+    border-bottom: 2px solid var(--color-login-content-blue);
   }
 
   .general-report__item-data-money-container {
@@ -1890,7 +1908,7 @@
     color: var(--color-login-content-black);
   }
 
-  .insights-table__list--first {
+  .insights-table__item--first {
     display: none;
   }
 
@@ -1949,3 +1967,67 @@
     display: none;
   }
 }
+
+/* @media only screen and (max-width: 950px) and (min-width: 361px) {
+
+  .general-report {
+    gap: 0 4px;
+  }
+
+  .insights__title-container {
+    margin-bottom: 24px;
+  }
+
+  .insights__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-login-content-black);
+  }
+
+  .insights-table__item--first {
+    display: none;
+  }
+
+  .insights__produtos--title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 16px;
+  }
+
+  .insights-table__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .initial-scale-table__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .insights-table__item-product {
+    display: block;
+    padding: 8px;
+  }
+
+  .insights-table__product-name-container {
+    width: min(100%, 652px);
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    margin-bottom: 8px;
+  }
+
+  .insights-table__product-info-container {
+    height: 24px;
+  }
+
+  .insights-table__value {
+    text-align: right;
+  }
+} */
